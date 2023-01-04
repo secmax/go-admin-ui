@@ -109,38 +109,36 @@
                 icon="el-icon-view"
                 @click="handlePreview(scope.row)"
               >预览</el-button>
-                <el-button
-                  slot="reference"
-                  type="text"
-                  size="small"
-                  icon="el-icon-view"
-                  @click="handleToProject(scope.row)"
-                >代码生成</el-button>
+              <el-button
+                slot="reference"
+                type="text"
+                size="small"
+                icon="el-icon-view"
+                @click="handleToProject(scope.row)"
+              >代码生成</el-button>
 
-                <el-button
-                  slot="reference"
-                  type="text"
-                  size="small"
-                  icon="el-icon-view"
-                  @click="handleToDB(scope.row)"
-                >生成配置</el-button>
+              <el-button
+                slot="reference"
+                type="text"
+                size="small"
+                icon="el-icon-view"
+                @click="handleToDB(scope.row)"
+              >生成配置</el-button>
 
-     
-                <el-button
-                  slot="reference"
-                  type="text"
-                  size="small"
-                  icon="el-icon-view"
-                   @click="handleToApiFile(scope.row)"
-                >生成迁移脚本</el-button>
-                
-                <el-button
-                  slot="reference"
-                  type="text"
-                  size="small"
-                  icon="el-icon-delete"
-                  @click="handleSingleDelete(scope.row)"
-                >删除</el-button>
+              <el-button
+                slot="reference"
+                type="text"
+                size="small"
+                icon="el-icon-view"
+                @click="handleToApiFile(scope.row)"
+              >生成迁移脚本</el-button>
+              <el-button
+                slot="reference"
+                type="text"
+                size="small"
+                icon="el-icon-delete"
+                @click="handleSingleDelete(scope.row)"
+              >删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -159,7 +157,7 @@
         <div class="el-dialog-container">
           <div class="tag-group">
             <!-- eslint-disable-next-line vue/valid-v-for -->
-            <el-tag v-for="(value, key) in preview.data" @click="codeChange(key)">
+            <el-tag v-for="(value, key) in preview.data" :key="key" @click="codeChange(key)">
               <template>
                 {{ key.substring(key.lastIndexOf('/')+1,key.indexOf('.go.template')) }}
               </template>
